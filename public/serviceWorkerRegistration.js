@@ -1,23 +1,21 @@
-
 document.addEventListener("DOMContentLoaded", async function () {
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register(`/firebase-messaging-sw.js`)
-      // register({
-      //   onUpdate: async (registration) => {
-      //     await registration.waiting?.postMessage({ type: 'SKIP_WAITING' });
-      //     window.location.reload();
-      //   }
-      // });
+    navigator.serviceWorker.register(`/sw.js`).then((register) => {
+      console.log({ register });
+    });
+    // register({
+    //   onUpdate: async (registration) => {
+    //     await registration.waiting?.postMessage({ type: 'SKIP_WAITING' });
+    //     window.location.reload();
+    //   }
+    // });
 
-// if(register){
-//   register.addEventListener('updatefound',()=>{
-//     console.log('Service Worker update detected!')
-//     // window.location.reload();
-//   })
-// }
-
-
-
+    // if(register){
+    //   register.addEventListener('updatefound',()=>{
+    //     console.log('Service Worker update detected!')
+    //     // window.location.reload();
+    //   })
+    // }
 
     // navigator.serviceWorker.addEventListener('controllerchange', () => {
     //   console.log('changed')
@@ -28,8 +26,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     //   console.log('changed')
     //    window.location.reload();
     // });
-
-
   }
 
   // const getNotifcationPremission = async () => {
@@ -60,39 +56,39 @@ document.addEventListener("DOMContentLoaded", async function () {
   //           );
   //         };
 
-          // registration.showNotification("با تشکر", {
-          //   body: "hey bro",
-          //   icon: "/logo512.png",
-          //   dir: "rtl",
-          //   badge: "/favicon.ico",
-          //   image: "/logo192.png",
-          //   vibrate: [200, 100, 200],
-          //   tag: "react",
-          //   renotify: true,
-          //   requireInteraction: true,
-          //   actions: [
-          //     {
-          //       title: "دانلود کتاب",
-          //       action: "download-action",
-          //       icon: "/logo192.png",
-          //     },
-          //     {
-          //       title: "نمایش کتاب",
-          //       action: "show-action",
-          //       icon: "/logo192.png",
-          //     },
-          //   ],
-          //   data: [
-          //     {
-          //       url: "https://www.google.com",
-          //       message: "this is notif for google",
-          //     },
-          //     {
-          //       url: "https://www.abzarwp.com",
-          //       message: "this is notif for abzar",
-          //     },
-          //   ],
-          // });
+  // registration.showNotification("با تشکر", {
+  //   body: "hey bro",
+  //   icon: "/logo512.png",
+  //   dir: "rtl",
+  //   badge: "/favicon.ico",
+  //   image: "/logo192.png",
+  //   vibrate: [200, 100, 200],
+  //   tag: "react",
+  //   renotify: true,
+  //   requireInteraction: true,
+  //   actions: [
+  //     {
+  //       title: "دانلود کتاب",
+  //       action: "download-action",
+  //       icon: "/logo192.png",
+  //     },
+  //     {
+  //       title: "نمایش کتاب",
+  //       action: "show-action",
+  //       icon: "/logo192.png",
+  //     },
+  //   ],
+  //   data: [
+  //     {
+  //       url: "https://www.google.com",
+  //       message: "this is notif for google",
+  //     },
+  //     {
+  //       url: "https://www.abzarwp.com",
+  //       message: "this is notif for abzar",
+  //     },
+  //   ],
+  // });
   //       });
   //     } else {
   //       console.log("else");

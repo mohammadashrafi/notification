@@ -7,10 +7,13 @@ function App() {
 
 
   useEffect(() => {
-    generateToken()
-     onMessage(messaging, (payload) => {
-        console.log({ payload });
-      });
+    navigator.serviceWorker.ready.then(()=>{
+      generateToken()
+      onMessage(messaging, (payload) => {
+         console.log({ payload });
+       });
+    })
+   
  
   }, []);
 
